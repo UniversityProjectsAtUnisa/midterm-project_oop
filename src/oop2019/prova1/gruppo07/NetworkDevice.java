@@ -7,7 +7,7 @@ package oop2019.prova1.gruppo07;
 
 /**
  *
- * @author ilmico
+ * @author gruppo07
  */
 public abstract class NetworkDevice implements NetworkInterface {
 

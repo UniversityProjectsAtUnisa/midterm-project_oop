@@ -7,9 +7,11 @@ package oop2019.prova1.gruppo07;
 
 /**
  *
- * @author carbo
+ * @author gruppo07
  */
 public interface NetworkInterface {
-    public void accept(NetworkInterface sourceInterface, int sourceAddress, int destAddress,String message);
+
+    public void accept(NetworkInterface sourceInterface, int sourceAddress, int destAddress, String message);
+
     public void connect(NetworkInterface other);
 }

@@ -7,24 +7,23 @@ package oop2019.prova1.gruppo07;
 
 /**
  *
- * @author carbo
+ * @author gruppo07
  */
 public class FileServer extends NetworkDevice {
 
     @Override
-    protected void process(int sourceAddress, String message){
-       
-        System.out.println(toString() + ": Su richiesta di "
+    protected void process(int sourceAddress, String message) {
+
+        System.out.println(this + ": Su richiesta di "
                 + sourceAddress + ": " + message);
-         if (getConnection() == null)
-            throw new NetworkException();
-         getConnection().accept(this, getAddress(), sourceAddress, "Dati risposta: "+message);
+        if (getConnection() == null) {
+            throw new NetworkException("FileServer non connesso!");
+        }
+        getConnection().accept(this, getAddress(), sourceAddress, "Dati risposta: " + message);
     }
-    
-    public String toString(){
-        return super.toString()+": File Server";
+
+    public String toString() {
+        return super.toString() + ": File Server";
     }
-    
-    
 
 }

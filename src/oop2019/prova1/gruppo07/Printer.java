@@ -7,7 +7,7 @@ package oop2019.prova1.gruppo07;
 
 /**
  *
- * @author carbo
+ * @author gruppo07
  */
 public class Printer extends NetworkDevice {
 

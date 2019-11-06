@@ -9,11 +9,11 @@ import java.util.*;
 
 /**
  *
- * @author carbo
+ * @author gruppo07
  */
 public class NetworkHub implements NetworkInterface {
 
-    private Set<NetworkInterface> connections;
+    private final Set<NetworkInterface> connections;
 
     private final String id;
 
@@ -32,7 +32,6 @@ public class NetworkHub implements NetworkInterface {
                 net.accept(this, sourceAddress, destAddress, message);
             }
         }
-
     }
 
     @Override
@@ -76,6 +75,7 @@ public class NetworkHub implements NetworkInterface {
         }
     }
 
+    @Override
     public String toString() {
         return "Hub " + id;
     }

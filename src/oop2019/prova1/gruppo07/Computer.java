@@ -7,7 +7,7 @@ package oop2019.prova1.gruppo07;
 
 /**
  *
- * @author marco
+ * @author gruppo07
  */
 public class Computer extends NetworkDevice {
 
@@ -24,21 +24,22 @@ public class Computer extends NetworkDevice {
 
     @Override
     protected void process(int sourceAddress, String message) {
-        System.out.println(this.toString()
-                + " ha ricevuto da " + sourceAddress + ": " + message);
+        System.out.println(this + " ha ricevuto da "
+                + sourceAddress + ": "
+                + message);
     }
 
     public void remoteFileAccessRequest(int serverAddress, String fileName) {
 
         if (getConnection() == null) {
-            throw new NetworkException();
+            throw new NetworkException("Computer non connesso!");
         }
         getConnection().accept(this, getAddress(), serverAddress, "Accesso a " + fileName);
     }
 
     public void remotePrintRequest(int printerAddress, String fileName) {
         if (getConnection() == null) {
-            throw new NetworkException();
+            throw new NetworkException("Computer non connesso!");
         }
         getConnection().accept(this, getAddress(), printerAddress, "Stampa di " + fileName);
     }
