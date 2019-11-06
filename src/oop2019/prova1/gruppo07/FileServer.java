@@ -15,7 +15,7 @@ public class FileServer extends NetworkDevice {
     protected void process(int sourceAddress, String message){
        
         System.out.println(toString() + ": Su richiesta di "
-                + sourceAddress + ": Accesso a " + message);
+                + sourceAddress + ": " + message);
          if (getConnection() == null)
             throw new NetworkException();
          getConnection().accept(this, getAddress(), sourceAddress, "Dati risposta: "+message);

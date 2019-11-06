@@ -24,7 +24,8 @@ public class NetworkHub implements NetworkInterface {
 
     @Override
     public void accept(NetworkInterface sourceInterface, int sourceAddress, int destAddress, String message) {
-        System.out.print(this+": da " /*Da verificare???*/);
+        System.out.println(this + ": da " + sourceAddress + " via "
+                + sourceInterface + " per " + destAddress + ": " + message);
 
         for (NetworkInterface net : connections) {
             if (!net.equals(sourceInterface)) {

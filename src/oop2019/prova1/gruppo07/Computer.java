@@ -25,8 +25,7 @@ public class Computer extends NetworkDevice {
     @Override
     protected void process(int sourceAddress, String message) {
         System.out.println(this.toString()
-                + " ha ricevuto da " + sourceAddress
-                + ": Dati risposta: " + message);
+                + " ha ricevuto da " + sourceAddress + ": " + message);
     }
 
     public void remoteFileAccessRequest(int serverAddress, String fileName) {
@@ -34,14 +33,14 @@ public class Computer extends NetworkDevice {
         if (getConnection() == null) {
             throw new NetworkException();
         }
-        getConnection().accept(this, getAddress(), serverAddress, fileName);
+        getConnection().accept(this, getAddress(), serverAddress, "Accesso a " + fileName);
     }
 
     public void remotePrintRequest(int printerAddress, String fileName) {
         if (getConnection() == null) {
             throw new NetworkException();
         }
-        getConnection().accept(this, getAddress(), printerAddress, /*Stampas*/fileName);//controllare stringa in output
+        getConnection().accept(this, getAddress(), printerAddress, "Stampa di " + fileName);//controllare stringa in output
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Printer extends NetworkDevice {
 
     @Override
     protected void process(int sourceAddress, String message) {
-        System.out.println(this + " : Su richiesta di " + sourceAddress + ": Stampa di " + message);
+        System.out.println(this + ": Su richiesta di " + sourceAddress + ": " + message);
     }
 
     @Override
