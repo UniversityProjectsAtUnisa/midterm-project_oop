@@ -24,11 +24,13 @@ public class NetworkHub implements NetworkInterface {
 
     @Override
     public void accept(NetworkInterface sourceInterface, int sourceAddress, int destAddress, String message) {
+        System.out.print(this+": da "+);
+
         for (NetworkInterface net : connections) {
             if (!net.equals(sourceInterface)) {
                 net.accept(this, sourceAddress, destAddress, message);
-                System.out.println(toString() + ": da " + sourceAddress + " via " + net.toString()
-                        + " per " + destAddress);
+                //System.out.println(toString() + ": da " + sourceAddress + " via " + net.toString());
+                // System.out.println(net.toString());
             }
         }
 
