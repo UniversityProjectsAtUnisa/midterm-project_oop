@@ -34,7 +34,7 @@ public class Computer extends NetworkDevice {
         if (getConnection() == null) {
             throw new NetworkException();
         }
-        getConnection().accept(this, getAddress(), serverAddress,/*Accesso a*/ " " + fileName);
+        getConnection().accept(this, getAddress(), serverAddress, fileName);
     }
 
     public void remotePrintRequest(int printerAddress, String fileName) {
