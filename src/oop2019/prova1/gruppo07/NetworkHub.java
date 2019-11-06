@@ -47,18 +47,18 @@ public class NetworkHub implements NetworkInterface {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (obj == null) {
+        if (other == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != other.getClass()) {
             return false;
         }
-        final NetworkHub other = (NetworkHub) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        final NetworkHub obj = (NetworkHub) other;
+        if (!Objects.equals(this.id, obj.id)) {
             return false;
         }
         return true;
@@ -74,9 +74,9 @@ public class NetworkHub implements NetworkInterface {
             System.out.println("  " + net.toString());
         }
     }
-    
-    public String toString(){
-        return "Hub "+id;
+
+    public String toString() {
+        return "Hub " + id;
     }
 
 }
