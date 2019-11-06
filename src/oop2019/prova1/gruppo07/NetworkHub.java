@@ -19,12 +19,12 @@ public class NetworkHub implements NetworkInterface {
 
     public NetworkHub(String id) {
         this.id = id;
-        connections = new HashSet<>();
+        connections = new LinkedHashSet<>();
     }
 
     @Override
     public void accept(NetworkInterface sourceInterface, int sourceAddress, int destAddress, String message) {
-        System.out.print(this+": da "+);
+        System.out.print(this+": da " /*Da verificare???*/);
 
         for (NetworkInterface net : connections) {
             if (!net.equals(sourceInterface)) {

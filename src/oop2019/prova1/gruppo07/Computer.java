@@ -9,6 +9,44 @@ package oop2019.prova1.gruppo07;
  *
  * @author marco
  */
-public class Computer {
+public class Computer extends NetworkDevice {
+
+    private final String name;
+
+    public Computer(String name) {
+        super();
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    protected void process(int sourceAddress, String message) {
+        System.out.println(this.toString()
+                + " ha ricevuto da " + sourceAddress
+                + ": Dati risposta: " + message);
+    }
+
+    public void remoteFileAccessRequest(int serverAddress, String fileName) {
+
+        if (getConnection() == null) {
+            throw new NetworkException();
+        }
+        getConnection().accept(this, getAddress(), serverAddress,/*Accesso a*/ " " + fileName);
+    }
+
+    public void remotePrintRequest(int printerAddress, String fileName) {
+        if (getConnection() == null) {
+            throw new NetworkException();
+        }
+        getConnection().accept(this, getAddress(), printerAddress, /*Stampas*/fileName);//controllare stringa in output
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ": Computer " + name;
+    }
 
 }

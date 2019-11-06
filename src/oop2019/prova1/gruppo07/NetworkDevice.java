@@ -16,7 +16,7 @@ public abstract class NetworkDevice implements NetworkInterface {
     private static int allocati = 0;
 
     public NetworkDevice() {
-        this.address = allocati++;
+        this.address = ++allocati;
     }
 
     @Override
