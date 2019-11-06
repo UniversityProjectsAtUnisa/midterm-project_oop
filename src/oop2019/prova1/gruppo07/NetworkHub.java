@@ -30,8 +30,6 @@ public class NetworkHub implements NetworkInterface {
         for (NetworkInterface net : connections) {
             if (!net.equals(sourceInterface)) {
                 net.accept(this, sourceAddress, destAddress, message);
-                //System.out.println(toString() + ": da " + sourceAddress + " via " + net.toString());
-                // System.out.println(net.toString());
             }
         }
 

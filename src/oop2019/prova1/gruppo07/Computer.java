@@ -40,7 +40,7 @@ public class Computer extends NetworkDevice {
         if (getConnection() == null) {
             throw new NetworkException();
         }
-        getConnection().accept(this, getAddress(), printerAddress, "Stampa di " + fileName);//controllare stringa in output
+        getConnection().accept(this, getAddress(), printerAddress, "Stampa di " + fileName);
     }
 
     @Override
